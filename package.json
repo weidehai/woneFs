@@ -1,0 +1,74 @@
+{
+  "name": "woneFs",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "author": "wone",
+  "license": "MIT",
+  "bin": {},
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "build-dev": "node build/clear.js && cross-env NODE_ENV=development rollup --config",
+    "build-rls": "node build/clear.js && cross-env NODE_ENV=production rollup --config",
+    "test": "jest",
+    "build": "build-dev && yarn test",
+    "pu": "yarn test && yarn build-rls && yarn publish",
+    "pu:github": "yarn test && yarn build-rls && yarn sync:github",
+    "sync:github": "git add -A && git commit && git push -u origin master",
+    "prepare": "husky install",
+    "lint": "eslint src/**"
+  },
+  "devDependencies": {
+    "@rollup/plugin-alias": "^3.1.5",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.10",
+    "@typescript-eslint/parser": "^4.33.0",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
+    "husky": "^7.0.2",
+    "jest": "^27.1.0",
+    "prettier": "^2.3.2",
+    "rollup": "^2.56.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.4.2",
+    "eslint-plugin-prettier": "^4.0.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "plugins": [
+      "prettier",
+      "@typescript-eslint"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2020
+    },
+    "rules": {
+      "prettier/prettier": "error"
+    }
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
