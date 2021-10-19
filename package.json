@@ -1,9 +1,9 @@
 {
   "name": "woneFs",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "description": "node file operation api encapsulate",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "wone",
   "license": "MIT",
   "bin": {},
@@ -28,10 +28,11 @@
     "@rollup/plugin-node-resolve": "^13.0.4",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.10",
-    "@typescript-eslint/parser": "^4.33.0",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
     "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.2",
     "jest": "^27.1.0",
     "prettier": "^2.3.2",
@@ -39,8 +40,7 @@
     "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.30.0",
     "ts-jest": "^27.0.5",
-    "typescript": "^4.4.2",
-    "eslint-plugin-prettier": "^4.0.0"
+    "typescript": "^4.4.2"
   },
   "eslintConfig": {
     "root": true,
